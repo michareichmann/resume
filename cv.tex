@@ -6,97 +6,46 @@
 \documentclass[10pt,a4paper,ragged2e,withhyper,academicons]{altacv}
 \geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
 
-\usepackage{paracol}  % lets you typeset columns of text in parallel
-\maxdeadcycles=200
+\input{preamble/general}
+\setmainfont{Lato}
 
+\columnratio{0.6} % Set the left/right column width ratio to 6:4.
 
-% Change the font if you want to, depending on whether
-% you're using pdflatex or xelatex/lualatex
-\ifxetexorluatex
-  % If using xelatex or lualatex:
-  \setmainfont{Lato}
-\else
-  % If using pdflatex:
-  \usepackage[default]{lato}
-\fi
+\addbibresource{cv.bib}  % publications
 
-% Change the colours if you want to
-\definecolor{VividPurple}{HTML}{3E0097}
-\definecolor{SlateGrey}{HTML}{2E2E2E}
-\definecolor{LightGrey}{HTML}{666666}
-% \colorlet{name}{black}
-\colorlet{tagline}{VividPurple}
-\colorlet{heading}{VividPurple}
-\colorlet{headingrule}{VividPurple}
-% \colorlet{subheading}{PastelRed}
-\colorlet{accent}{VividPurple}
-\colorlet{emphasis}{SlateGrey}
-\colorlet{body}{LightGrey}
-
-% Change some fonts, if necessary
-% \renewcommand{\namefont}{\Huge\rmfamily\bfseries}
-% \renewcommand{\personalinfofont}{\footnotesize}
-% \renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
-% \renewcommand{\cvsubsectionfont}{\large\bfseries}
-
-% Change the bullets for itemize and rating marker
-% for \cvskill if you want to
-\renewcommand{\itemmarker}{{\small\textbullet}}
-\renewcommand{\ratingmarker}{\faCircle}
-
-%% sample.bib contains your publications
-\addbibresource{sample.bib}
-
-\begin{document}
-\name{Marissa Mayer}
-\tagline{Business Woman \& Proud Geek}
-% Cropped to square from https://en.wikipedia.org/wiki/Marissa_Mayer#/media/File:Marissa_Mayer_May_2014_(cropped).jpg, CC-BY 2.0
-%% You can add multiple photos on the left or right
-\photoR{2.5cm}{mmayer-wikipedia-cc-by-2_0}
-% \photoL{2cm}{Yacht_High,Suitcase_High}
+% ------------- PERSONAL INFORMATION ----------------------------------------------------------
+\name{Michael Reichmann}
+\tagline{PhD Particle Physics}
+\photoR{2.5cm}{micha}
+% \photoL{2cm}{micha}
 \personalinfo{%
-  % Not all of these are required!
-  % You can add your own with \printinfo{symbol}{detail}
-  \email{mmayer@yahoo-inc.com}
-%   \phone{000-00-0000}
-  \mailaddress{Address, Street, 00000 County}
-  \location{Sunnyvale, CA}
-  \homepage{marissamayr.tumblr.com}
-  \twitter{@marissamayer}
-  \linkedin{marissamayer}
-%   \github{github.com/mmayer} % I'm just making this up though.
-%   \orcid{orcid.org/0000-0000-0000-0000} % Obviously making this up too. If you want to use this field (and also other academicons symbols), add "academicons" option to \documentclass{altacv}
-  %% You MUST add the academicons option to \documentclass, then compile with LuaLaTeX or XeLaTeX, if you want to use \orcid or other academicons commands.
-  % \orcid{0000-0000-0000-0000}
-  %% You can add your own arbtrary detail with
-  %% \printinfo{symbol}{detail}[optional hyperlink prefix]
-  % \printinfo{\faPaw}{Hey ho!}
-  %% Or you can declare your own field with
-  %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+% add your own with \printinfo{symbol}{detail}[optional hyperlink prefix]
+  \email{micha.reichmann@gmail.com}
+  \phone{+491781988015}
+  \mailaddress{Brzeska 23/17}
+  \location{50-430 Wroc\l aw}
+%   \homepage{marissamayr.tumblr.com}
+%   \twitter{@marissamayer}
+  \linkedin{michareichmann}
+  \github{michareichmann} 
+  \orcid{0000-0002-6220-5496}
+  % \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
   % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
   % \gitlab{your_id}
 }
 
+\begin{document}
+
 \makecvheader
 
-%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
-\AtBeginEnvironment{itemize}{\small}
-
-%% Set the left/right column width ratio to 6:4.
-\columnratio{0.6}
-
-% Start a 2-column paracol. Both the left and right columns will automatically
-% break across pages if things get too long.
-\begin{paracol}{2}
+\begin{paracol}{2} % breaks across pages if things get too long.
 
 \cvsection{Experience}
 
-\cvevent{President \& CEO}{Yahoo!}{July 2012 -- Ongoing}{Sunnyvale, CA}
+\cvevent{Researcher}{Millennium Research Group}{February 2011 -- March 2011}{Toronto, CA}
 \begin{itemize}
-\item Led the \$5 billion acquisition of the company with Verizon -- the entity which believed most in the immense value Yahoo!\ has created
-\item Acquired Tumblr for \$1.1 billion and moved the company's blog there
-\item Built Yahoo's mobile, video and social businesses from nothing in 2011 to \$1.6 billion in GAAP revenue in 2015
-\item Tripled the company's mobile base to over 600 million monthly active users and generated over \$1 billion of mobile advertising revenue last year
+	\item conducted a market survey on MRI- \& ultrasonic devices
+	\item saved and handled large data with Excel 
 \end{itemize}
 
 \divider

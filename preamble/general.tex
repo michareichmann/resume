@@ -1,0 +1,40 @@
+\makeatletter \def\input@path{ {preamble/} } \makeatother
+
+\input{packages}
+% \input{commands}
+
+\graphicspath{ {figures/} }
+
+\AtBeginEnvironment{itemize}{\small}  % make fonts of itemize environments slightly smaller
+\maxdeadcycles=200
+
+% ---------- COLORS ----------------------------
+% Change the colours if you want to
+\definecolor{VividPurple}{HTML}{3E0097}
+\definecolor{Emerald}{HTML}{28B463}
+\definecolor{DarkGreen}{HTML}{186A3B}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+% \colorlet{name}{black}
+\colorlet{tagline}{Emerald}
+\colorlet{heading}{Emerald}
+\colorlet{headingrule}{Emerald}
+% \colorlet{subheading}{PastelRed}
+\colorlet{accent}{Emerald}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+
+% ---------- FONTS ----------------------------
+% Change some fonts, if necessary
+% \renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+% \renewcommand{\personalinfofont}{\footnotesize}
+% \renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+% \renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+
+% ---------- BULLETS ----------------------------
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}

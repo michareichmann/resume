@@ -11,3 +11,5 @@
 *.bcf
 *.xml
 *.xmpi
+*.bbl
+*.blg
