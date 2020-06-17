@@ -1,0 +1,13 @@
+*.log
+*.nav
+*.aux
+*.idx
+*.out
+*.snm
+*.backup
+*.toc
+*.synctex.gz
+*.lua
+*.bcf
+*.xml
+*.xmpi
