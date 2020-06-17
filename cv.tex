@@ -40,147 +40,58 @@
 
 \begin{paracol}{2} % breaks across pages if things get too long.
 
-\cvsection{Experience}
 
-\cvevent{Researcher}{Millennium Research Group}{February 2011 -- March 2011}{Toronto, CA}
-\begin{itemize}
-	\item conducted a market survey on MRI- \& ultrasonic devices
-	\item saved and handled large data with Excel 
-\end{itemize}
+\input{experience}
+\input{dayinlife}
 
-\divider
+\newpage  %use ONLY \newpage if you want to force a page break for, only for current column
 
-\cvevent{Vice President of Location \& Services}{Google}{Oct 2010 -- July 2012}{Palo Alto, CA}
-\begin{itemize}
-\item Position Google Maps as the world leader in mobile apps and navigation
-\item Oversaw 1000+ engineers and product managers working on Google Maps, Google Places and Google Earth
-\end{itemize}
+\input{publications}
 
-\divider
+\switchcolumn % Switch to the right column.
 
-\cvevent{Vice President of Search Products \& UX}{Google}{2005 --  2010}{Palo Alto, CA}
-
-\divider
-
-\cvevent{Product Manager \& UI Lead}{Google}{Oct 2001 -- July 2005}{Palo Alto, CA}
-
-\begin{itemize}
-\item Appointed by the founder Larry Page in 2001 to lead the Product Management and User Interaction teams
-\item Optimized Google's homepage and A/B tested every minor detail to increase usability (incl.~spacing between words, color schemes and pixel-by-pixel element alignment)
-\end{itemize}
-
-% \divider
-
-% \cvevent{Product Engineer}{Google}{23 June 1999 -- 2001}{Palo Alto, CA}
-
-% \begin{itemize}
-% \item Joined the company as employe \#20 and female employee \#1
-% \item Developed targeted advertisement in order to use user's search queries and show them related ads
-% \end{itemize}
-
-\cvsection{A Day of My Life}
-
-% Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
-% \wheelchart{outer radius}{inner radius}{
-% comma-separated list of value/text width/color/detail}
-% Some ad-hoc tweaking to adjust the labels so that they don't overlap
-\hspace*{-1em}  %% quick hack to move the wheelchart a bit left
-\wheelchart{1.5cm}{0.5cm}{%
-  10/13em/accent!30/Sleeping \& dreaming about work,
-  25/9em/accent!60/Public resolving issues with Yahoo!\ investors,
-  5/11em/accent!10/\footnotesize\\[1ex]New York \& San Francisco Ballet Jawbone board member,
-  20/11em/accent!40/Spending time with family,
-  5/8em/accent!20/\footnotesize Business development for Yahoo!\ after the Verizon acquisition,
-  30/9em/accent/Showing Yahoo!\ \mbox{employees} that their work has meaning,
-  5/8em/accent!20/Baking cupcakes
-}
-
-% use ONLY \newpage if you want to force a page break for
-% ONLY the currentc column
-\newpage
-
-\cvsection{Publications}
-
-\nocite{*}
-
-\printbibliography[heading=pubtype,title={\printinfo{\faBook}{Books}},type=book]
-
-\divider
-
-\printbibliography[heading=pubtype,title={\printinfo{\faFile*[regular]}{Journal Articles}}, type=article]
-
-\divider
-
-\printbibliography[heading=pubtype,title={\printinfo{\faUsers}{Conference Proceedings}},type=inproceedings]
-
-%% Switch to the right column. This will now automatically move to the second
-%% page if the content is too long.
-\switchcolumn
-
+% --------------------- PHILOSOPHY ------------------------------------------------------------
 \cvsection{Life Philosophy}
 \begin{quote}
-``If you don't have any shadows, you're not standing in the light.''
+``Ultimately real is only the present moment of physical efficiency.''
 \end{quote}
 
-\cvsection{Most Proud of}
+\input{skills}
 
-\cvachievement{\faTrophy}{Courage I had}{to take a sinking ship and try to make it float}
-
-\divider
-
-\cvachievement{\faHeartbeat}{Persistence \& Loyalty}{I showed despite the hard moments and my willingness to stay with Yahoo after the acquisition}
-
-\divider
-
-\cvachievement{\faChartLine}{Google's Growth}{from a hundred thousand searches per day to over a billion}
-
-\divider
-
-\cvachievement{\faFemale}{Inspiring women in tech}{Youngest CEO on Fortune's list of 50 most powerful women}
-
-\cvsection{Strengths}
-
-\cvtag{Hard-working (18/24)}
-\cvtag{Persuasive}\\
-\cvtag{Motivator \& Leader}
-
-\divider\smallskip
-
-\cvtag{UX}
-\cvtag{Mobile Devices \& Applications}
-\cvtag{Product Management \& Marketing}
-
+% --------------------- LANGUAGES ------------------------------------------------------------
 \cvsection{Languages}
-
+\cvskill{German}{5}
 \cvskill{English}{5}
-% \divider
+\divider
+\cvskill{Russian}{3}
+\cvskill{Polish}{2}
+\divider
+\cvskill{French}{1}
+\cvskill{Spanish}{1}
 
-\cvskill{Spanish}{4}
-% \divider
-
-\cvskill{German}{3}
-
-
+% --------------------- EDUCATION ------------------------------------------------------------
 \cvsection{Education}
-
-\cvevent{M.S.\ in Computer Science}{Stanford University}{Sept 1997 -- June 1999}{}
+\cvevent{MSc ETH\ in Physics}{ETH Zürich}{September 2012 -- September 2015}{}
+% \begin{itemize}
+% 	\item Thesis Title: COCPITT - the COmpaCt PIxel Tracking Telescope - Commissioning, Performance Evaluation and Applications to Beam Test Studies 
+% \end{itemize}
 
 \divider
+\cvevent{B.S.\ in Physics}{Friedrich-Schiller-Universität Jena}{July 2007 -- December 2010}{}
 
-\cvevent{B.S.\ in Symbolic Systems}{Stanford University}{Sept 1993 -- June 1997}{}
 
-\newpage
+% \newpage
 
-\cvsection{Referees}
-
+% \cvsection{Referees}
+% 
 % \cvref{name}{email}{mailing address}
-\cvref{Prof.\ Alpha Beta}{Institute}{a.beta@university.edu}
-{Address Line 1\\Address line 2}
-
-\divider
-
-\cvref{Prof.\ Gamma Delta}{Institute}{g.delta@university.edu}
-{Address Line 1\\Address line 2}
+% \cvref{Prof.\ Alpha Beta}{Institute}{a.beta@university.edu}
+% {Address Line 1\\Address line 2}
+% 
+% \divider
+% 
+% \cvref{Prof.\ Gamma Delta}{Institute}{g.delta@university.edu}
+% {Address Line 1\\Address line 2}
 
 \end{paracol}
 

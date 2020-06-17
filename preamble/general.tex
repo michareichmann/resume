@@ -1,4 +1,4 @@
-\makeatletter \def\input@path{ {preamble/} } \makeatother
+\makeatletter \def\input@path{ {preamble/} {sections/} } \makeatother
 
 \input{packages}
 % \input{commands}
@@ -6,21 +6,25 @@
 \graphicspath{ {figures/} }
 
 \AtBeginEnvironment{itemize}{\small}  % make fonts of itemize environments slightly smaller
-\maxdeadcycles=200
+\maxdeadcycles=400
 
 % ---------- COLORS ----------------------------
 % Change the colours if you want to
 \definecolor{VividPurple}{HTML}{3E0097}
 \definecolor{Emerald}{HTML}{28B463}
+\definecolor{DarkOrange}{HTML}{D35400}
+\definecolor{Orange}{HTML}{F39C12}
+\definecolor{Blue}{HTML}{2E86C1}
 \definecolor{DarkGreen}{HTML}{186A3B}
 \definecolor{SlateGrey}{HTML}{2E2E2E}
 \definecolor{LightGrey}{HTML}{666666}
 % \colorlet{name}{black}
-\colorlet{tagline}{Emerald}
-\colorlet{heading}{Emerald}
-\colorlet{headingrule}{Emerald}
+\def\col{Orange}
+\colorlet{tagline}{\col}
+\colorlet{heading}{\col}
+\colorlet{headingrule}{\col}
 % \colorlet{subheading}{PastelRed}
-\colorlet{accent}{Emerald}
+\colorlet{accent}{\col}
 \colorlet{emphasis}{SlateGrey}
 \colorlet{body}{LightGrey}
 
