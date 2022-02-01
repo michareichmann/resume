@@ -10,7 +10,6 @@
 \setmainfont{Lato}
 
 \columnratio{0.6} % Set the left/right column width ratio to 6:4.
-
 \addbibresource{cv.bib}  % publications
 
 % ------------- PERSONAL INFORMATION ----------------------------------------------------------
@@ -22,8 +21,10 @@
 % add your own with \printinfo{symbol}{detail}[optional hyperlink prefix]
   \email{micha.reichmann@gmail.com}
   \phone{+491781988015}
-  \mailaddress{Brzeska 23/17}
-  \location{50-430 Wroc\l aw}
+%   \mailaddress{Brzeska 23/17}
+%   \location{50-430 Wroc\l aw}
+  \mailaddress{Forchstrasse 151}
+  \location{8032 Z\"urich}
 %   \homepage{marissamayr.tumblr.com}
 %   \twitter{@marissamayer}
   \linkedin{michareichmann}
@@ -34,66 +35,31 @@
   % \gitlab{your_id}
 }
 
+% ------------- MAIN DOCUMENT -----------------------------------------------------------------
 \begin{document}
-
 \makecvheader
-
 \begin{paracol}{2} % breaks across pages if things get too long.
 
-
+% ------------- LEFT COLUMN -------------
 \input{experience}
 \input{dayinlife}
 
 \newpage  %use ONLY \newpage if you want to force a page break for, only for current column
-
 \input{publications}
 
 \switchcolumn % Switch to the right column.
 
-% --------------------- PHILOSOPHY ------------------------------------------------------------
+% ------------- RIGHT COLUMN -------------
 \cvsection{Life Philosophy}
-\begin{quote}
-``Ultimately real is only the present moment of physical efficiency.''
-\end{quote}
+\begin{quote}``Ultimately real is only the present moment of physical efficiency.''\end{quote}
 
 \input{skills}
-
-% --------------------- LANGUAGES ------------------------------------------------------------
-\cvsection{Languages}
-\cvskill{German}{5}
-\cvskill{English}{5}
-\divider
-\cvskill{Russian}{3}
-\cvskill{Polish}{2}
-\divider
-\cvskill{French}{1}
-\cvskill{Spanish}{1}
-
-% --------------------- EDUCATION ------------------------------------------------------------
-\cvsection{Education}
-\cvevent{MSc ETH\ in Physics}{ETH Zürich}{September 2012 -- September 2015}{}
-% \begin{itemize}
-% 	\item Thesis Title: COCPITT - the COmpaCt PIxel Tracking Telescope - Commissioning, Performance Evaluation and Applications to Beam Test Studies 
-% \end{itemize}
-
-\divider
-\cvevent{B.S.\ in Physics}{Friedrich-Schiller-Universität Jena}{July 2007 -- December 2010}{}
-
+\input{lang}
+\input{edu}
 
 % \newpage
-
-% \cvsection{Referees}
-% 
-% \cvref{name}{email}{mailing address}
-% \cvref{Prof.\ Alpha Beta}{Institute}{a.beta@university.edu}
-% {Address Line 1\\Address line 2}
-% 
-% \divider
-% 
-% \cvref{Prof.\ Gamma Delta}{Institute}{g.delta@university.edu}
-% {Address Line 1\\Address line 2}
+% \input{referees}
 
 \end{paracol}
-
 \end{document}
 
