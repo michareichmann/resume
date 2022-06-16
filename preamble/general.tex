@@ -1,8 +1,4 @@
-\makeatletter \def\input@path{ {preamble/} {sections/} } \makeatother
-
-\input{packages}
-% \input{commands}
-
+% MAIN SETTINGS
 \graphicspath{ {figures/} }
 
 \AtBeginEnvironment{itemize}{\small}  % make fonts of itemize environments slightly smaller
@@ -19,7 +15,7 @@
 \definecolor{SlateGrey}{HTML}{2E2E2E}
 \definecolor{LightGrey}{HTML}{666666}
 % \colorlet{name}{black}
-\def\col{Orange}
+\newcommand{\col}{Orange}
 \colorlet{tagline}{\col}
 \colorlet{heading}{\col}
 \colorlet{headingrule}{\col}
