@@ -20,6 +20,8 @@
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
 \ProvidesClass{altacv}[2020/05/17 AltaCV v1.3.2, yet another alternative class for a resume/curriculum vitae.]
 
+%! suppress = CommandAlreadyDefined
+\newcommand{\phone}{bla}
 %% v1.1: Optionally load academicons
 \newif\if@academicons
 \DeclareOption{academicons}{\@academiconstrue}
@@ -206,6 +208,7 @@
 \ExplSyntaxOff
 
 \newcommand{\name}[1]{\def\@name{#1}}
+\newcommand{\rcol}[1]{\def\@rcol{#1}}
 \newcommand{\tagline}[1]{\def\@tagline{#1}}
 \newcommand{\personalinfo}[1]{\def\@personalinfo{#1}}
 \NewInfoField{email}{\faAt}[mailto:]
@@ -280,6 +283,20 @@
   \endgroup\medskip
 }
 
+\newcommand{\leftcvheader}{%
+  \begingroup
+    \begin{minipage}{\@rcol\linewidth}
+      \altacv@left@photos
+    \end{minipage}\hspace*{2em}
+    \begin{minipage}{\dimexpr\linewidth - \@rcol\linewidth}
+      \raggedright{\namefont\color{name}\MakeUppercase{\@name}\par}
+      {\taglinefont\color{tagline}\@tagline\par}
+      \vspace*{2em}
+      \raggedleft\personalinfofont\@personalinfo\par
+    \end{minipage}
+  \endgroup\medskip
+}
+
 \renewenvironment{quote}{\color{accent}\itshape\large}{\par}
 
 \newcommand{\cvsection}[2][]{%
@@ -293,6 +310,8 @@
   \smallskip%
   {\color{subheading}\cvsubsectionfont{#1}\par}\medskip
 }
+
+\newcommand{\cvdata}[2]{\textcolor{emphasis}{\textbf{#1:}}\hfill\small#2\par}
 
 % v1.1.4: fixes inconsistent font size
 \newcommand{\cvevent}[4]{%
@@ -318,10 +337,10 @@
   \tikz[baseline]\node[anchor=base,draw=body!30,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex]{#1};
 }
 
-\newcommand{\cvskill}[2]{%
-\textcolor{emphasis}{\textbf{#1}}\hfill
+\newcommand{\cvskill}[3][]{%
+\textcolor{emphasis}{\textbf{#2}}\hfill\textbf{#1}
 \foreach \x in {1,...,5}{%
-  \space{\ifnumgreater{\x}{#2}{\color{body!30}}{\color{accent}}\ratingmarker}}\par%
+  \space{\ifnumgreater{\x}{#3}{\color{body!30}}{\color{accent}}\ratingmarker}}\par%
 }
 
 % Adapted from @Jake's answer at http://tex.stackexchange.com/a/82729/226

@@ -3,60 +3,78 @@
 % \documentclass[10pt,a4paper,normalphoto]{altacv}
 % compile with LuaLaTeX on Linux
 % ---------------------------------------------------------------------------------------------
+%! region PREAMBLE
 \documentclass[10pt,a4paper,ragged2e,withhyper,academicons]{altacv}
-\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
+\geometry{left=1.25cm, right=1.25cm, top=1.5cm, bottom=1.5cm, columnsep=1.2cm}
 
+\input{preamble/packages}
 \input{preamble/general}
+
 \setmainfont{Lato}
 
-\columnratio{0.6} % Set the left/right column width ratio to 6:4.
+\rcol{.345}
+\columnratio{.345} % Set the left/right column width ratio
 \addbibresource{cv.bib}  % publications
-
-% ------------- PERSONAL INFORMATION ----------------------------------------------------------
+%! endregion
+%
+%! region PERSONAL INFORMATION
 \name{Michael Reichmann}
-\tagline{PhD Particle Physics}
-\photoR{2.5cm}{micha}
-% \photoL{2cm}{micha}
-\personalinfo{%
+\tagline{PhD ETH in Physics}
+%\photoR{4cm}{micha}
+\photoL{5cm}{micha}
+%
+\address{Forchstrasse 151, 8032 Zürich}
+\nationality{German}
+\permit{C, since 2012 in CH}
+\bday{12/15/1988}
+%
+\personalinfo{
 % add your own with \printinfo{symbol}{detail}[optional hyperlink prefix]
   \email{micha.reichmann@gmail.com}
-  \phone{+491781988015}
+  %!suppress = MissingImport
+  \phone{+491781988015}\\[2pt]
 %   \mailaddress{Brzeska 23/17}
 %   \location{50-430 Wroc\l aw}
-  \mailaddress{Forchstrasse 151}
-  \location{8032 Z\"urich}
+%  \mailaddress{Forchstrasse 151}
+%  \location{8032 Z\"urich}\\[2pt]
 %   \homepage{marissamayr.tumblr.com}
 %   \twitter{@marissamayer}
   \linkedin{michareichmann}
-  \github{michareichmann} 
+  \github{michareichmann}\\[2pt]
   \orcid{0000-0002-6220-5496}
   % \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
   % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
   % \gitlab{your_id}
 }
-
+%! endregion
 % ------------- MAIN DOCUMENT -----------------------------------------------------------------
 \begin{document}
-\makecvheader
+\tikz[remember picture,overlay] \node[inner sep=0pt] at (current page.center){\includegraphics[width=\paperwidth,height=\paperheight]{figures/bkg}};
+\leftcvheader
 \begin{paracol}{2} % breaks across pages if things get too long.
 
-% ------------- LEFT COLUMN -------------
-\input{experience}
-\input{dayinlife}
-
-\newpage  %use ONLY \newpage if you want to force a page break for, only for current column
-\input{publications}
-
-\switchcolumn % Switch to the right column.
-
-% ------------- RIGHT COLUMN -------------
+% --------------------------------
+%! region LEFT COLUM
 \cvsection{Life Philosophy}
 \begin{quote}``Ultimately real is only the present moment of physical efficiency.''\end{quote}
+\hfill\small - Fyodor Shcherbatskoy
 
-\input{skills}
-\input{lang}
-\input{edu}
-
+\input{sections/skills}
+\input{sections/lang}
+\input{sections/edu}
+\input{sections/person}
+%! endregion
+% --------------------------------
+\switchcolumn % Switch to the right column.
+% --------------------------------
+%! region RIGHT COLUMN
+\input{sections/experience}
+\input{sections/dayinlife}
+%! endregion
+% --------------------------------
+%
+%\newpage  %use ONLY \newpage if you want to force a page break for, only for current column
+%\input{sections/publications}
 % \newpage
 % \input{referees}
 
