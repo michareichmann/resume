@@ -285,7 +285,7 @@
 
 \newcommand{\leftcvheader}{%
   \begingroup
-    \begin{minipage}{\@rcol\linewidth}
+    \begin{minipage}{\@rcol\linewidth}\hspace*{-1.25cm}\centering
       \altacv@left@photos
     \end{minipage}\hspace*{2em}
     \begin{minipage}{\dimexpr\linewidth - \@rcol\linewidth}
@@ -343,8 +343,10 @@
 }
 
 \newcommand{\cvtag}[1]{%
-  \tikz[baseline]\node[anchor=base,draw=body!30,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex]{#1};
+%  \tikz[baseline]\node[anchor=base,draw=body!30,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex]{#1};
+  \tikz[baseline]\node[anchor=base,draw=body!30,fill=white,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex]{#1};
 }
+\newcommand{\cvkey}[2]{\cvtag{#1:}#2}
 
 \newcommand{\cvskill}[3][]{%
 \textcolor{emphasis}{\textbf{#2}}\hfill\textbf{#1}
