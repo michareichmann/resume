@@ -346,7 +346,7 @@
 %  \tikz[baseline]\node[anchor=base,draw=body!30,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex]{#1};
   \tikz[baseline]\node[anchor=base,draw=body!30,fill=white,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex]{#1};
 }
-\newcommand{\cvkey}[2]{\cvtag{#1:}#2}
+\newcommand{\cvkey}[2]{\cvtag{#1:}\hfill#2\par}
 
 \newcommand{\cvskill}[3][]{%
 \textcolor{emphasis}{\textbf{#2}}\hfill\textbf{#1}
