@@ -322,9 +322,18 @@
   \smallskip}
   \ifstrequal{#3}{}{}{{\small\makebox[0.5\linewidth][l]{\faCalendar~#3}}}%
   \ifstrequal{#4}{}{}{{\small\makebox[0.5\linewidth][l]{\faMapMarker~#4}}}\par
-  \medskip\normalsize
+  \smallskip\normalsize
 }
-
+\NewDocumentEnvironment{cveventi}{m m m m O{2em}} {\cvevent{#1}{#2}{#3}{#4}\begin{itemize}[leftmargin=#5]} {\end{itemize}\vspace*{-2pt}}
+%
+\newcommand{\cveventshort}[4]{
+  {\large\color{emphasis}#1} @ {\normalsize\textbf{\color{accent}#2}}\par\smallskip
+  \small\makebox[0.5\linewidth][l]{\faCalendar~#3}
+  \small\makebox[0.5\linewidth][l]{\faMapMarker~#4}\par\smallskip\normalsize
+}
+%\NewDocumentEnvironment{test}{m m m m}{\ifdefempty\BODY{\begin{itemize}}{}}{\ifdefempty\BODY{\end{itemize}}{}}
+\NewDocumentEnvironment{cveventis}{m m m m O{2em}} {\cveventshort{#1}{#2}{#3}{#4}\begin{itemize}[leftmargin=#5]} {\end{itemize}\vspace*{-2pt}}
+%
 \newcommand{\cvachievement}[3]{%
   \begin{tabularx}{\linewidth}{@{}p{2em} @{\hspace{1ex}} >{\raggedright\arraybackslash}X@{}}
   \multirow{2}{*}{\Large\color{accent}#1} & \bfseries\textcolor{emphasis}{#2}\\
