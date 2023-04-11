@@ -334,6 +334,11 @@
 %\NewDocumentEnvironment{test}{m m m m}{\ifdefempty\BODY{\begin{itemize}}{}}{\ifdefempty\BODY{\end{itemize}}{}}
 \NewDocumentEnvironment{cveventis}{m m m m O{2em}} {\cveventshort{#1}{#2}{#3}{#4}\begin{itemize}[leftmargin=#5]} {\end{itemize}\vspace*{-2pt}}
 %
+\NewDocumentCommand{\edu}{m m m O{}}{
+  {\large\color{emphasis}#1} @ {\normalsize\textbf{\color{accent}#2}}\par\smallskip
+  \small\makebox[0.5\linewidth][l]{\faCalendar~#3\ifthenelse{\equal{#4}{}}{}{ -- #4}}\par\smallskip\normalsize
+}
+%
 \newcommand{\cvachievement}[3]{%
   \begin{tabularx}{\linewidth}{@{}p{2em} @{\hspace{1ex}} >{\raggedright\arraybackslash}X@{}}
   \multirow{2}{*}{\Large\color{accent}#1} & \bfseries\textcolor{emphasis}{#2}\\
@@ -346,12 +351,18 @@
 %  \tikz[baseline]\node[anchor=base,draw=body!30,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex]{#1};
   \tikz[baseline]\node[anchor=base,draw=body!30,fill=white,rounded corners,inner xsep=1ex,inner ysep =0.75ex,text height=1.5ex,text depth=.25ex]{#1};
 }
-\newcommand{\cvkey}[2]{\cvtag{#1:}\hfill#2\par}
+\newcommand{\cvkey}[2]{\cvtag{#1:}{\hfill\raggedleft#2}\par}
 
 \newcommand{\cvskill}[3][]{%
 \textcolor{emphasis}{\textbf{#2}}\hfill\textbf{#1}
 \foreach \x in {1,...,5}{%
   \space{\ifnumgreater{\x}{#3}{\color{body!30}}{\color{accent}}\ratingmarker}}\par%
+}
+
+\newcommand{\lifephilosophy}[2][]{
+  \cvsection{Life Philosophy}
+  \begin{quote}``#2''\end{quote}
+  \ifx&#1&\else\hfill\small - #1\fi
 }
 
 % Adapted from @Jake's answer at http://tex.stackexchange.com/a/82729/226
