@@ -48,7 +48,7 @@
 %! endregion
 % ------------- MAIN DOCUMENT -----------------------------------------------------------------
 \begin{document}
-\tikz[remember picture,overlay] \node[inner sep=0pt] at (current page.center){\includegraphics[width=\paperwidth,height=\paperheight]{figures/bkg}};
+\bkgpic{figures/bkg} % background picture
 \leftcvheader
 \begin{paracol}{2} % breaks across pages if things get too long.
 
@@ -69,13 +69,13 @@
 \input{sections/experience}
 \input{sections/dayinlife}
 \input{sections/disclaimer}
+% --------------------------------
+\newpage  %use ONLY if you want to force a page break for, only for current column
+\bkgpic{figures/bkg-page}
+\input{sections/publications}
 %! endregion
 % --------------------------------
-%
-%\newpage  %use ONLY \newpage if you want to force a page break for, only for current column
-%\input{sections/publications}
-% \newpage
-% \input{referees}
+%\input{referees}
 
 \end{paracol}
 \end{document}
