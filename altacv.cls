@@ -338,6 +338,9 @@
   {\large\color{emphasis}#1} @ {\normalsize\textbf{\color{accent}#2}}\par\smallskip
   \small\makebox[0.5\linewidth][l]{\faCalendar~#3\ifthenelse{\equal{#4}{}}{}{ -- #4}}\par\smallskip\normalsize
 }
+\NewDocumentCommand{\bkgpic}{m}{
+  \tikz[remember picture, overlay] \node[inner sep=0pt] at (current page.center){\includegraphics[width=\paperwidth,height=\paperheight]{#1}};
+}
 %
 \newcommand{\cvachievement}[3]{%
   \begin{tabularx}{\linewidth}{@{}p{2em} @{\hspace{1ex}} >{\raggedright\arraybackslash}X@{}}
