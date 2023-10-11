@@ -1,3 +1,4 @@
+%! suppress = NonMatchingIf
 %%%%%%%%%%%%%%%%%
 % This is altacv.cls (v1.3.2, 17 May 2020) written by
 % LianTze Lim (liantze@gmail.com).
@@ -39,12 +40,15 @@
 \LoadClass{article}
 %% v1.3.2 Hopefully this helps make the PDF
 %% file more 'friendly' with copy-paste etc
+\RequirePackage{etoolbox}
 \RequirePackage[a-1b]{pdfx}
+\RequirePackage{accsupp}
 \RequirePackage[margin=2cm]{geometry}
-\RequirePackage{fontawesome5}
+\RequirePackage[fixed]{fontawesome5}
 \RequirePackage{ifxetex,ifluatex}
 \RequirePackage{scrlfile}
 \RequirePackage{xparse}
+\RequirePackage{trimclip}
 
 %% v1.1.5: added for convenience
 \newif\ifxetexorluatex
@@ -356,10 +360,18 @@
 }
 \newcommand{\cvkey}[2]{\cvtag{#1:}{\hfill\raggedleft#2}\par}
 
+% v1.6: Use accsupp so that the actual numeric value is copied/pasted
+%       and also support 0.5, 1.5, 2.5, 3.5, 4.5
 \newcommand{\cvskill}[3][]{%
-\textcolor{emphasis}{\textbf{#2}}\hfill\textbf{#1}
-\foreach \x in {1,...,5}{%
-  \space{\ifnumgreater{\x}{#3}{\color{body!30}}{\color{accent}}\ratingmarker}}\par%
+  \textcolor{emphasis}{\textbf{#2}}\hfill\textbf{#1}
+  \BeginAccSupp{method=plain, ActualText={#3}}
+    \foreach \x in {1,...,5}{%
+      \ifdimequal{\x pt - #3 pt}{.5pt}{\hspace*{-2.5pt}
+        \clipbox*{0pt -0.25ex {.52\width} {\totalheight}}{\color{accent}\ratingmarker}%
+        \clipbox*{{.52\width} -0.25ex {\width} {\totalheight}}{\color{body!30}\ratingmarker}}
+      {\ifdimgreater{\x bp}{#3 bp}{\color{body!30}}{\color{accent}}\ratingmarker{}}%
+      \hspace*{-5pt}
+  }\EndAccSupp{}\par%
 }
 
 \newcommand{\lifephilosophy}[2][]{
