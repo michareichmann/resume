@@ -315,7 +315,7 @@
   {\color{subheading}\cvsubsectionfont{#1}\par}\medskip
 }
 
-\newcommand{\cvdata}[2]{\textcolor{emphasis}{\textbf{#1:}}\hfill\small#2\par}
+\newcommand{\cvdata}[2]{\ifthenelse{\equal{detokenize{#2}}{detokenize{}}}{}{\textcolor{emphasis}{\textbf{#1:}}\hfill\small#2\par}}
 
 % v1.1.4: fixes inconsistent font size
 \newcommand{\cvevent}[4]{%
